@@ -11,6 +11,8 @@ RUN dpkg --add-architecture i386 \
         gnupg \
         wget \
     && echo 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' > /etc/apt/sources.list.d/wine.list \
+    && echo 'deb http://ppa.launchpad.net/cybermax-dexter/sdl2-backport/ubuntu bionic main' > /etc/apt/sources.list.d/dexter.list \
+    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BBB8BD3BBE6AD3419048EDC50795A9A788A59C82 \
     && curl -fsSL https://dl.winehq.org/wine-builds/winehq.key | apt-key add - \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
