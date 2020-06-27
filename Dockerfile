@@ -51,5 +51,5 @@ COPY files/run-farming-simulator.sh /usr/local/bin/run-farming-simulator
 
 RUN chmod +x /usr/local/bin/run-farming-simulator
 
-EXPOSE 80
+EXPOSE 8080
 CMD ["/usr/bin/supervisord"]
