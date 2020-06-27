@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 
-ARG MONO_VER="4.7.5"
-ARG GECKO_VER="2.47"
+ARG MONO_VER="5.1.0"
+ARG GECKO_VER="2.47.1"
 
 RUN dpkg --add-architecture i386 \
     && apt-get update \
@@ -22,8 +22,8 @@ RUN dpkg --add-architecture i386 \
         winetricks \
         xvfb \
     && mkdir -p /usr/share/wine/mono /usr/share/wine/gecko \
-    && wget https://dl.winehq.org/wine/wine-mono/${MONO_VER}/wine-mono-${MONO_VER}.msi \
-        -O /usr/share/wine/mono/wine-mono-${MONO_VER}.msi \
+    && wget https://dl.winehq.org/wine/wine-mono/${MONO_VER}/wine-mono-${MONO_VER}-x86.msi \
+        -O /usr/share/wine/mono/wine-mono-${MONO_VER}-x86.msi \
     && wget https://dl.winehq.org/wine/wine-gecko/${GECKO_VER}/wine_gecko-${GECKO_VER}-x86.msi \
         -O /usr/share/wine/gecko/wine_gecko-${GECKO_VER}-x86.msi \
     && wget https://dl.winehq.org/wine/wine-gecko/${GECKO_VER}/wine_gecko-${GECKO_VER}-x86_64.msi \
