@@ -26,10 +26,10 @@ RUN dpkg --add-architecture i386 \
     && mkdir -p /usr/share/wine/mono /usr/share/wine/gecko \
     && wget https://dl.winehq.org/wine/wine-mono/${MONO_VER}/wine-mono-${MONO_VER}-x86.msi \
         -O /usr/share/wine/mono/wine-mono-${MONO_VER}-x86.msi \
-    && wget https://dl.winehq.org/wine/wine-gecko/${GECKO_VER}/wine_gecko-${GECKO_VER}-x86.msi \
-        -O /usr/share/wine/gecko/wine_gecko-${GECKO_VER}-x86.msi \
-    && wget https://dl.winehq.org/wine/wine-gecko/${GECKO_VER}/wine_gecko-${GECKO_VER}-x86_64.msi \
-        -O /usr/share/wine/gecko/wine_gecko-${GECKO_VER}-x86_64.msi \
+    && wget https://dl.winehq.org/wine/wine-gecko/${GECKO_VER}/wine-gecko-${GECKO_VER}-x86.msi \
+        -O /usr/share/wine/gecko/wine-gecko-${GECKO_VER}-x86.msi \
+    && wget https://dl.winehq.org/wine/wine-gecko/${GECKO_VER}/wine-gecko-${GECKO_VER}-x86_64.msi \
+        -O /usr/share/wine/gecko/wine-gecko-${GECKO_VER}-x86_64.msi \
     && echo 'X11UseLocalhost no' >> /etc/ssh/sshd_config \
     && mkdir /run/sshd \
     && useradd -ms /bin/bash farmer \
